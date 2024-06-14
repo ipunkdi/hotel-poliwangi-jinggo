@@ -9,7 +9,7 @@
     <title>{{ $title }} - Jinggo Hotel</title>
 </head>
 <body>
-    <div class="antialiased bg-gray-50 dark:bg-gray-900">
+    <div class="antialiased bg-white dark:bg-gray-900">
         {{-- Navbar --}}
         <x-navbar></x-navbar>
 

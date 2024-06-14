@@ -1,7 +1,7 @@
 @props(['active' => false])
 
 <a {{ $attributes }}
-    class="flex items-center p-2 text-base font-medium {{ $active ? 'bg-amber-400 text-white hover:bg-amber-400 hover:text-white' : 'text-gray-900 hover:bg-gray-100'}}  rounded-lg dark:text-white dark:hover:bg-gray-700 group"
+    class="flex items-center p-2 text-base font-medium {{ $active ? 'bg-amber-500 text-white hover:bg-amber-500 hover:text-white' : 'text-gray-900 hover:bg-gray-100'}}  rounded-lg dark:text-white dark:hover:bg-gray-700 group"
     aria-current="{{ $active ? 'page' : false }}"
     >
     <svg class="w-6 h-6 {{ $active ? 'text-white' : 'text-gray-800' }} dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

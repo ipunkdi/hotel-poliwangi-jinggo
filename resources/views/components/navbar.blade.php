@@ -37,7 +37,7 @@
         </button>
         <a href="/" class="flex items-center justify-between mr-4">
         <img
-            src="images/logo-jinggo-h.png"
+            src="/images/logo-jinggo-h.png"
             class="mr-3 h-10"
             alt="Jinggo Hotel Logo"
         />

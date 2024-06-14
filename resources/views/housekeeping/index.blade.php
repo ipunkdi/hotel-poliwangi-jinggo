@@ -5,7 +5,7 @@
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse px-4 lg:px-12">
             <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                Guests
+                Housekeeping
             </a>
             </li>
             <li>
@@ -20,11 +20,11 @@
     </nav>
 
     {{-- Title --}}
-    <h3 class="text-3xl font-bold dark:text-white px-4 lg:px-12">Guests</h3>
+    <h3 class="text-3xl font-bold dark:text-white px-4 lg:px-12">Housekeeping</h3>
 
 
     {{-- Table --}}
-    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+    <section class="bg-white dark:bg-gray-900 p-3 sm:p-5">
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <!-- Start coding here -->
             <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
