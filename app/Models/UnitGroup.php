@@ -12,7 +12,7 @@ class UnitGroup extends Model
     use HasFactory;
     protected $fillable = ['type'];
 
-    public function unit(): HasMany
+    public function units(): HasMany
     {
         return $this->hasMany(Unit::class);
     }

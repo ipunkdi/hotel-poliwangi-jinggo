@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:title>{{ $title }}</x-slot:title>
+    <x-slot:title>{{ Str::limit($title, 11) }}</x-slot:title>
     {{-- Breadcrumbs --}}
     <nav class="flex" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse px-4 lg:px-12">
@@ -13,7 +13,7 @@
                 <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <a href="/guests/{{ $guest->id }}" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">{{ $guest->name }}</a>
+                <a href="/guests/{{ $guest->name }}" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">{{ $guest->name }}</a>
             </div>
             </li>
             <li>
@@ -26,6 +26,7 @@
             </li>
         </ol>
     </nav>
+
     <p>Name: {{ $guest->name }}</p>
     <p>Email: {{ $guest->email }}</p>
     <p>Phone: {{ $guest->phone }}</p>
