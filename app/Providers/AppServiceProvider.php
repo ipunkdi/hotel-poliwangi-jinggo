@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Unit;
+use App\Observers\UnitObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 

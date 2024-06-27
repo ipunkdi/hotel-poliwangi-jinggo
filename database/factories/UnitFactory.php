@@ -18,8 +18,8 @@ class UnitFactory extends Factory
     {
         return [
             'name' => fake()->numberBetween(201, 254),
-            'description' => fake()->sentence(),
-            'max_person' => fake()->randomDigit()
+            'description' => 'Stylish, spacious and bright with an open-concept bedroom and bathroom, and a private balcony with daybed. Room includes two single beds, a desk, a small sofa and a floor-to-ceiling window for maximum natural light.',
+            'max_person' => 2
         ];
     }
 }

@@ -12,7 +12,7 @@ class GuestController extends Controller
      */
     public function index()
     {
-        return view('guests.index', ['title' => 'Guest', 'guests' => Guest::latest()->filter(request(['search']))->paginate(10)]);
+        return view('guests.index', ['title' => 'Guests', 'guests' => Guest::latest()->filter(request(['search']))->paginate(10)]);
     }
 
     /**
@@ -32,7 +32,7 @@ class GuestController extends Controller
             'name' => 'required',
             'email' => 'required|unique:guests',
             'phone' => 'required|unique:guests',
-            'gender' => 'required',
+            'gender' => 'required|in:Male,Female',
             'date_of_birth' => 'required',
             'place_of_birth' => 'required',
             'address' => 'required',
@@ -67,7 +67,7 @@ class GuestController extends Controller
     {
         $rules = [
             'name' => 'required',
-            'gender' => 'required',
+            'gender' => 'required|in:Male,Female',
             'date_of_birth' => 'required',
             'place_of_birth' => 'required',
             'address' => 'required',

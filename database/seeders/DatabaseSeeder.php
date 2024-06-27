@@ -10,8 +10,8 @@ use App\Models\Guest;
 use App\Models\Inventory;
 use App\Models\UnitGroup;
 use Illuminate\Database\Seeder;
-use Database\Seeders\UnitSeeder;
 use Database\Seeders\GuestSeeder;
+use Database\Seeders\UnitSeeder;
 use Database\Seeders\UnitGroupSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -43,7 +43,5 @@ class DatabaseSeeder extends Seeder
                 'unit_group_id' => $unitGroup->id,
             ]);
         }
-
-        
     }
 }

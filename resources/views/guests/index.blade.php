@@ -138,13 +138,13 @@
                                     <div id="{{ $guest->id }}-dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="{{ $guest->id }}-dropdown-button">
                                             <li>
-                                                <a href="/guests/{{ $guest->name }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
+                                                <a href="/guests/{{ $guest->id }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
                                             </li>
                                             <li>
-                                                <a href="/guests/{{ $guest->name }}/edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                                <a href="/guests/{{ $guest->id }}/edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                         </ul>
-                                        <form action="/guests/{{ $guest->name }}" method="post">
+                                        <form action="/guests/{{ $guest->id }}" method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="inline w-full py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" onclick="return confirm('Are you sure?')">Delete</button>

@@ -43,8 +43,8 @@
                     <div>
                         <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
                         <select id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
                         </select>
                     </div>
                     <div class="w-full" inline-datepicker data-date="02/25/2022">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                        <textarea id="address" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your address here" name="address" required value="{{ old('address') }}"></textarea>
+                        <textarea id="address" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your address here" name="address" required>{{ old('address') }}</textarea>
                     </div>
                     <div class="w-full">
                         <label for="postal_code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Postal Code</label>

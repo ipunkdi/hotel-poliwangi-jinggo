@@ -27,14 +27,13 @@
         </ol>
     </nav>
 
-
     {{-- Title --}}
     <h3 class="text-3xl font-bold dark:text-white px-4 lg:px-12">Guests</h3>
 
     <section class="bg-white dark:bg-gray-900">
         <div class="bg-white border border-gray-200 rounded-lg shadow py-8 px-4 mx-auto max-w-2xl lg:py-8">
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Edit guest profile</h2>
-            <form action="/guests/{{ $guest->name }}" method="post">
+            <form action="/guests/{{ $guest->id }}" method="post">
                 @method('put')
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
@@ -53,13 +52,13 @@
                     <div>
                         <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
                         <select id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="Male" {{ old('gender', isset($guest) ? $guest->gender : '') == 'Male' ? 'selected' : '' }}>Male</option>
+                            <option value="Female" {{ old('gender', isset($guest) ? $guest->gender : '') == 'Female' ? 'selected' : '' }}>Female</option>
                         </select>
                     </div>
                     <div class="w-full" inline-datepicker data-date="02/25/2022">
                         <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Birth</label>
-                        <input type="date" name="date_of_birth" id="date_of_birth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="dd-mm-yyyy" required value="{{ old('date_of_birth', $guest->date_0f_birth) }}">
+                        <input type="date" name="date_of_birth" id="date_of_birth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="dd-mm-yyyy" required value="{{ old('date_of_birth', isset($guest) ? $guest->date_of_birth : '') }}">
                     </div>
                     <div class="w-full">
                         <label for="place_of_birth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place of Birth</label>
@@ -67,7 +66,7 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                        <textarea id="address" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your address here" name="address" required value="{{ old('address', $guest->address) }}"></textarea>
+                        <textarea id="address" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your address here" name="address" required>{{ old('address', $guest->address) }}</textarea>
                     </div>
                     <div class="w-full">
                         <label for="postal_code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Postal Code</label>

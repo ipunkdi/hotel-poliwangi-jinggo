@@ -16,11 +16,11 @@ return new class extends Migration
             $table->foreignId('unit_id')->constrained(
                 table: 'units',
                 indexName: 'inventories_units_id'
-            )->default(1);
+            )->onDelete('cascade');
             $table->foreignId('unit_group_id')->constrained(
                 table: 'unit_groups',
-                indexName: 'units_unit_groups_id'
-            )->default(1);
+                indexName: 'inventories_unit_groups_id'
+            )->onDelete('cascade');
             $table->timestamps();
         });
     }

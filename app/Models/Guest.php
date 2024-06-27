@@ -21,9 +21,4 @@ class Guest extends Model
             });
         });
     }
-
-    public function getRouteKeyName()
-    {
-        return 'name';
-    }
 }

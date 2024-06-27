@@ -1,29 +1,18 @@
 <?php
 
-use App\Http\Controllers\GuestController;
-use App\Models\Unit;
-use App\Models\Guest;
-use App\Models\Inventory;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\UnitGroupController;
+use App\Http\Controllers\UnitController;
 
 // Dashboard
 Route::get('/', function () {
     return view('dashboard', ['title' => 'Dashboard']);
 });
 
-// Rooms
-Route::get('/rooms', function () {
-    return view('rooms.index', ['title' => 'Rooms', 'rooms' => Inventory::all()]);
-});
-
-Route::get('/rooms/create', function () {
-    return view('rooms.create', ['title' => 'Create Room']);
-});
-
-Route::get('/rooms/{room}', function (Inventory $room) {
-    return view('rooms.show', ['title' => 'view room', 'room' => $room]);
-});
+// Room
+Route::resource('/room/unit-groups', UnitGroupController::class);
+Route::resource('/room/units', UnitController::class);
 
 // Guests
 Route::resource('/guests', GuestController::class);

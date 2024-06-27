@@ -17,8 +17,8 @@ class Unit extends Model
         return $this->belongsTo(UnitGroup::class);
     }
 
-    public function inventory(): BelongsTo
+    public function inventories(): HasMany
     {
-        return $this->belongsTo(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
 }

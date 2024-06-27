@@ -9,7 +9,7 @@
                 <x-sidebar-link href="/" :active="request()->is('/')">Dashboard</x-sidebar-link>
             </li>
 
-            <li>
+            {{-- <li>
                 <a
                     href="/rooms"
                     class="flex items-center p-2 text-base font-medium {{ request()->is('rooms*') ? 'bg-amber-500 text-white hover:bg-amber-500 hover:text-white' : 'text-gray-900 hover:bg-gray-100'}} rounded-lg dark:text-white  dark:hover:bg-gray-700 group"
@@ -19,7 +19,52 @@
                     </svg>
                         <span class="ml-3">Rooms</span>
                 </a>
-            </li>
+            </li> --}}
+
+            <li>
+                <button
+                    type="button"
+                    class="flex w-full items-center p-2 text-base font-medium {{ request()->is('room*') ? 'bg-amber-500 text-white hover:bg-amber-500 hover:text-white' : 'text-gray-900 hover:bg-gray-100'}} rounded-lg dark:text-white  dark:hover:bg-gray-700 group"
+                    aria-controls="dropdown-rooms"
+                    data-collapse-toggle="dropdown-rooms"
+                >
+                <svg class="w-6 h-6 {{ request()->is('room*') ? 'text-white' : 'text-gray-800' }} dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 4h12M6 4v16M6 4H5m13 0v16m0-16h1m-1 16H6m12 0h1M6 20H5M9 7h1v1H9V7Zm5 0h1v1h-1V7Zm-5 4h1v1H9v-1Zm5 0h1v1h-1v-1Zm-3 4h2a1 1 0 0 1 1 1v4h-4v-4a1 1 0 0 1 1-1Z"/>
+                </svg>
+                    <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                    >Room
+                    </span>
+                    <svg
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    ></path>
+                    </svg>
+                </button>
+                <ul id="dropdown-rooms" class="hidden py-2 space-y-2">
+                    <li>
+                        <a
+                            href="/room/unit-groups"
+                            class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            >Unit Groups</a
+                        >
+                    </li>
+                    <li>
+                    <a
+                        href="/room/units"
+                        class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        >Units</a
+                    >
+                    </li>
+                </ul>
+                </li>
 
             <li>
                 <a
