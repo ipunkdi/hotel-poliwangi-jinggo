@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Unit;
 use App\Models\Inventory;
 use App\Models\UnitGroup;
-use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class UnitController extends Controller
@@ -54,7 +54,7 @@ class UnitController extends Controller
     {
         $unit = Unit::findOrFail($id);
         $inventory = Inventory::where('unit_id', $id)->firstOrFail();
-        return view('rooms.units.show', ['title' => $unit->name,'inventory' => $inventory]);
+        return view('rooms.units.show', ['title' => $unit->name, 'inventory' => $inventory]);
     }
 
     /**

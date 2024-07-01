@@ -53,7 +53,7 @@
                         <a
                             href="/room/unit-groups"
                             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >Unit Groups</a
+                            >Unit groups</a
                         >
                     </li>
                     <li>
@@ -105,11 +105,11 @@
             <li>
             <button
                 type="button"
-                class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                class="flex w-full items-center p-2 text-base font-medium {{ request()->is('sales*') ? 'bg-amber-500 text-white hover:bg-amber-500 hover:text-white' : 'text-gray-900 hover:bg-gray-100'}} rounded-lg dark:text-white  dark:hover:bg-gray-700 group"
                 aria-controls="dropdown-sales"
                 data-collapse-toggle="dropdown-sales"
             >
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 {{ request()->is('sales*') ? 'text-white' : 'text-gray-800' }} dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
             </svg>
                 <span class="flex-1 ml-3 text-left whitespace-nowrap"
@@ -132,23 +132,16 @@
             <ul id="dropdown-sales" class="hidden py-2 space-y-2">
                 <li>
                 <a
-                    href="#"
+                    href="/sales/rate-plans"
                     class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >Products</a
+                    >Rate plans</a
                 >
                 </li>
                 <li>
                 <a
-                    href="#"
+                    href="/sales/services"
                     class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >Billing</a
-                >
-                </li>
-                <li>
-                <a
-                    href="#"
-                    class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >Invoice</a
+                    >Services</a
                 >
                 </li>
             </ul>

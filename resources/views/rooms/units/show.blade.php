@@ -29,5 +29,6 @@
     <p>Unit Name: {{ $inventory->unit->name }}</p>
     <p>Description: {{ $inventory->unit->description }}</p>
     <p>Room Type: {{ $inventory->unitGroup->type }}</p>
+    <p>Price: Rp. {{ $inventory->unitGroup->ratePlan }}</p>
     <p>Max. Person: {{ $inventory->unit->max_person }}</p>
 </x-layout>

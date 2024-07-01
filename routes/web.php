@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\UnitGroupController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\RatePlanController;
 
 // Dashboard
 Route::get('/', function () {
@@ -28,5 +29,7 @@ Route::get('/housekeeping', function () {
 });
 
 // Sales
+Route::resource('/sales/rate-plans', RatePlanController::class);
+
 // Finance
 // General Manager

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('rate_plans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('unit_group_id')->constrained(
+                table: 'unit_groups',
+                indexName: 'rate_plans_unit_groups_id'
+            )->onDelete('cascade');
+            $table->integer('price');
             $table->timestamps();
         });
     }
